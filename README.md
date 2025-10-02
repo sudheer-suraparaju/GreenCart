@@ -1,4 +1,4 @@
-4. Add product functionality added:
+## ** 4. Add product functionality added:**
 
 
 ## ** Adding a Product Without Pydantic**
@@ -34,7 +34,7 @@ Understand that this blocks the server as we are not using await.
 * You still have **no type validation**, so any malformed JSON may crash the app.
 
 Now understand how Pydantic is able to solve the above problems:
-## **2️⃣ Adding a Product With Pydantic**
+## **2️Adding a Product With Pydantic**
 
 Pydantic automatically parses JSON and validates it. You **don’t need async/await** in the route because FastAPI handles the I/O internally.
 
