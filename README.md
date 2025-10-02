@@ -84,5 +84,3 @@ Advantages:
 * Use **async/await** if manually reading request body JSON or doing I/O-bound work.
 * Without Pydantic, you can still work, but you need **more code** and it’s **less safe and scalable**.
 
-
-Do you want me to do that?
