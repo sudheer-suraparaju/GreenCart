@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+from fastapi import HTTPException
 
 app = FastAPI()
 
@@ -11,6 +13,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+class Product(BaseModel):
+    id: int
+    name: str
+    price: str
 
 
 products = [
@@ -37,3 +44,8 @@ def fetch_product(product_id: int):
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
     return {"product": product}
+
+@app.post("/products")
+def add_product(product: Product):
+    products.append(product.dict())
+    return {"message": "Product added successfully", "product": product}
